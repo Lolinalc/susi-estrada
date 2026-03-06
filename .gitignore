@@ -1,0 +1,14 @@
+dontreadme.md
+node_modules/
+client/node_modules/
+server/node_modules/
+client/dist/
+.env
+server/.env
+server/.env.example
+client/.env
+client/.env.example
+*.local
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,108 @@
+/* === FILTERS === */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-12);
+}
+
+.filterBtn {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-gray-400);
+  padding: var(--sp-2) var(--sp-5);
+  border: 1px solid var(--c-gray-700);
+  border-radius: 2px;
+  transition: all var(--dur-base);
+}
+
+.filterBtn:hover {
+  color: var(--c-white);
+  border-color: var(--c-green-500);
+}
+
+.filterActive {
+  color: var(--c-white) !important;
+  background: var(--c-green-800);
+  border-color: var(--c-green-700) !important;
+}
+
+/* === GRID (masonry columns via CSS columns) === */
+.grid {
+  columns: 4 200px;
+  column-gap: var(--sp-3);
+  row-gap: var(--sp-3);
+}
+
+/* === CELL === */
+.cell {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--sp-3);
+  break-inside: avoid;
+  cursor: pointer;
+  background: var(--c-gray-800);
+  border: none;
+  padding: 0;
+}
+
+.cell:focus-visible {
+  outline: 2px solid var(--c-green-300);
+  outline-offset: 2px;
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out),
+              filter var(--dur-base);
+  filter: grayscale(20%);
+}
+
+.cell:hover .thumb {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.cellOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 8, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--dur-base);
+}
+
+.cell:hover .cellOverlay {
+  opacity: 1;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .grid {
+    columns: 3 160px;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    columns: 2 140px;
+  }
+
+  .filters {
+    gap: var(--sp-2);
+  }
+
+  .filterBtn {
+    font-size: 0.7rem;
+    padding: var(--sp-2) var(--sp-3);
+  }
+}

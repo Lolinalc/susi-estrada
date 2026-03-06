@@ -1,0 +1,160 @@
+.empty {
+  font-style: italic;
+  color: var(--c-gray-600);
+  padding: var(--sp-12) 0;
+}
+
+/* === MONTHS === */
+.months {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+
+.monthGroup {}
+
+.monthLabel {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--c-green-400);
+  text-transform: capitalize;
+  margin-bottom: var(--sp-6);
+  letter-spacing: -0.02em;
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--c-gray-800);
+}
+
+/* === EVENT ROW === */
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: var(--sp-6);
+  align-items: center;
+  padding: var(--sp-6) var(--sp-8);
+  background: var(--c-gray-800);
+  border: 1px solid var(--c-gray-700);
+  border-left: 3px solid var(--c-green-700);
+  transition: transform var(--dur-base), border-color var(--dur-base), background var(--dur-base);
+}
+
+.event:hover {
+  border-left-color: var(--c-green-400);
+  background: var(--c-gray-700);
+  transform: translateX(4px);
+}
+
+.past {
+  opacity: 0.4;
+  border-left-color: var(--c-gray-600) !important;
+}
+
+.past:hover {
+  transform: none;
+  background: var(--c-gray-800);
+}
+
+/* === DATE BLOCK === */
+.dateBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-green-900);
+  border: 1px solid var(--c-green-800);
+  padding: var(--sp-2);
+  min-width: 56px;
+  text-align: center;
+}
+
+.dateDay {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--c-green-300);
+  line-height: 1;
+}
+
+.dateWeekday {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-gray-600);
+}
+
+/* === EVENT INFO === */
+.showName {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--c-white);
+  margin-bottom: var(--sp-2);
+}
+
+.eventMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-5);
+}
+
+.eventMeta span {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.82rem;
+  color: var(--c-gray-400);
+}
+
+.notes {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--c-green-300);
+  margin-top: var(--sp-2);
+}
+
+/* === CTA === */
+.ticketBtn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  padding: 0.65rem 1.25rem;
+}
+
+.pastBadge {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-gray-600);
+  padding: var(--sp-1) var(--sp-3);
+  border: 1px solid var(--c-gray-700);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 700px) {
+  .event {
+    grid-template-columns: 56px 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--sp-4);
+    padding: var(--sp-5);
+  }
+
+  .ticketBtn,
+  .pastBadge {
+    grid-column: 2;
+    align-self: start;
+    width: fit-content;
+  }
+
+  .eventMeta {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+}

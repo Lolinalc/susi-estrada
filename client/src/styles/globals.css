@@ -1,0 +1,270 @@
+/* ============================================
+   SUSI ESTRADA — DESIGN SYSTEM
+   Paleta: Negro · Blanco · Verdes teatrales
+   ============================================ */
+
+:root {
+  /* --- Color Tokens --- */
+  --c-black:       #0a0a08;
+  --c-black-soft:  #111110;
+  --c-white:       #f5f3ee;
+  --c-white-dim:   #c8c6c0;
+
+  --c-green-950:   #0d1f13;
+  --c-green-900:   #162b1e;
+  --c-green-800:   #1e3d29;
+  --c-green-700:   #2d5a3d;
+  --c-green-500:   #4a8c60;
+  --c-green-400:   #68a97b;
+  --c-green-300:   #8fc49f;
+  --c-green-100:   #c8dece;
+
+  --c-gray-800:    #242420;
+  --c-gray-700:    #323230;
+  --c-gray-600:    #52524e;
+  --c-gray-400:    #8a8a82;
+  --c-gray-200:    #d0cfc8;
+
+  /* --- Typography --- */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* --- Spacing scale (4px base) --- */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* --- Layout --- */
+  --nav-h:      72px;
+  --max-w:      1280px;
+  --gutter:     2rem;
+  --radius-sm:  4px;
+  --radius-md:  8px;
+
+  /* --- Transitions --- */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-fast:  180ms;
+  --dur-base:  300ms;
+  --dur-slow:  600ms;
+}
+
+/* ========== RESET ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--c-black);
+  color: var(--c-white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ========== BASE TYPOGRAPHY ========== */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--c-white);
+}
+
+h1 { font-size: clamp(3.5rem, 9vw, 8rem); }
+h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); }
+h3 { font-size: clamp(1.6rem, 3vw, 2.8rem); }
+h4 { font-size: clamp(1.2rem, 2vw, 1.75rem); }
+
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--c-gray-400);
+  font-weight: 300;
+}
+
+/* ========== LAYOUT HELPERS ========== */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: var(--sp-24) 0;
+}
+
+.page-wrapper {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+}
+
+/* ========== SECTION HEADER ========== */
+.section-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-green-400);
+  margin-bottom: var(--sp-4);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--c-white);
+  margin-bottom: var(--sp-6);
+  line-height: 1;
+}
+
+.section-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--c-green-500);
+  margin-bottom: var(--sp-12);
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.8rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all var(--dur-base) var(--ease-out);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--c-green-700);
+  color: var(--c-white);
+  border: 1px solid var(--c-green-700);
+}
+
+.btn-primary:hover {
+  background: var(--c-green-500);
+  border-color: var(--c-green-500);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 140, 96, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--c-white);
+  border: 1px solid var(--c-gray-600);
+}
+
+.btn-outline:hover {
+  border-color: var(--c-green-300);
+  color: var(--c-green-300);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--c-green-300);
+  border: 1px solid transparent;
+  padding-left: 0;
+}
+
+.btn-ghost:hover {
+  color: var(--c-white);
+}
+
+.btn-ghost::after {
+  content: '→';
+  margin-left: var(--sp-2);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.btn-ghost:hover::after {
+  transform: translateX(4px);
+}
+
+/* ========== SELECTION ========== */
+::selection {
+  background-color: var(--c-green-700);
+  color: var(--c-white);
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--c-black); }
+::-webkit-scrollbar-thumb {
+  background: var(--c-green-800);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--c-green-700); }
+
+/* ========== FOCUS ========== */
+:focus-visible {
+  outline: 2px solid var(--c-green-300);
+  outline-offset: 3px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  :root {
+    --gutter:  1.25rem;
+    --nav-h:   60px;
+  }
+
+  .section {
+    padding: var(--sp-16) 0;
+  }
+}

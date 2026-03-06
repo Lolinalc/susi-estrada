@@ -1,0 +1,80 @@
+export const en = {
+  nav: {
+    about: "About",
+    shows: "Shows",
+    calendar: "Calendar",
+    gallery: "Gallery",
+    press: "Press",
+    contact: "Contact",
+    lang: "ES",
+  },
+
+  home: {
+    tagline: "Actress · Dancer · Producer",
+    scrollCta: "Explore",
+  },
+
+  about: {
+    eyebrow: "About the artist",
+    title: "Susi Estrada",
+    bios: [
+      `Susi Estrada (Mérida, Yucatán, November 19, 1987) is a scenic creator, actress, executive producer and cultural manager with over a decade of experience in the performing arts. Her work has been distinguished by articulating solid creative processes with strategic production and management structures that have enabled the consolidation, circulation and sustainability of various theatrical projects at national and international levels.`,
+      `A graduate of the Theatre Bachelor's Degree from the Escuela Superior de Artes Escénicas and the Centro Estatal de Bellas Artes in Artistic Education with a specialization in Mexican Dance, she began her professional career in Mérida, Yucatán. From 2013 to 2018, she was part of the Centro Estatal de Prevención contra el Delito in Yucatán, where she designed, coordinated and produced artistic projects in collaboration with the Secretaría de Educación Pública, integrating art as a tool for social transformation and community management.`,
+      `In 2018, she moved to Mexico City to join the company of Conchi León, where over five years she strengthened her profile in executive and general production, in addition to her acting work. She led production, management, coordination and operation processes for multiple productions, including Cachorro de León (2020 Mexico City), Fuego Nuevo for Canal 22 (with recordings in Mérida, Yucatán 2020), Niños Peces y Otros Monstruos (2021), La Casa de tu Alma (2022) and the international tour of La Tía Mariela at the Latin Theatre in Chicago (2023). Her work was key in financial planning, institutional liaison, tour logistics and team building.`,
+      `As an independent creator, she has led general and executive production, articulating institutional support, strategic alliances and exhibition circuits in projects such as: Esta boca es mía, recipient of the Sistema de Apoyos a la Creación y Proyectos Culturales (Creadores Escénicos 2022–2023); La Profesora by Eduardo Galán (2024), directed by Hugo Arrevillaga and starring Sylvia Pasquel and Alberto Estrella, with a season in Mexico City and a national tour; and S.A.B.R.O.S.A. Sistema de Autodefensa Bio-Robótica para Ocasiones Sexuales Agresivas by Mariana Hartasánchez (2025), with a first season at Foro Urgente 2 of Foro Shakespeare, and an upcoming international tour at the Festival de Monólogos Chicago in April of this year.`,
+      `She is currently developing an international scenic co-production with the French Embassy and the IRD – Institut de Recherche pour le Développement, in collaboration with Dr. Audrey Arnal, a theatrical project focused on traditional medicine and the knowledge of Mayan-speaking women, with an upcoming premiere in Mexico City and Mérida, Yucatán, May 2026.`,
+      `Over the past five years, she has consolidated a line of work centered on executive production, cultural management and scenic creation with a territorial and social impact perspective. Her work is sustained through public support and circulation platforms such as México: Encuentro de las Artes Escénicas (ENARTES) 2025, reaffirming her commitment to a rigorous, articulated theater deeply connected to its context.`,
+    ],
+    tickerLabel: "Festivals, theaters & recognition",
+  },
+
+  shows: {
+    eyebrow: "On stage",
+    title: "Shows",
+    other: "Other projects",
+    otherSub:
+      "A selection of projects in which Susi has participated throughout her career.",
+    cta: "View details",
+    placeholder: "Coming soon",
+  },
+
+  calendar: {
+    eyebrow: "Upcoming performances",
+    title: "Calendar",
+    buy: "Buy tickets",
+    noEvents: "No performances scheduled at this time.",
+  },
+
+  gallery: {
+    eyebrow: "Images",
+    title: "Gallery",
+    all: "All",
+  },
+
+  press: {
+    eyebrow: "Media",
+    title: "Press",
+    read: "Read article",
+  },
+
+  contact: {
+    eyebrow: "Get in touch",
+    title: "Contact",
+    social: "Social Media",
+    form: {
+      name: "Name",
+      email: "Email address",
+      subject: "Subject",
+      message: "Message",
+      send: "Send message",
+      sending: "Sending…",
+      success: "Message sent! I'll be in touch soon.",
+      error: "An error occurred. Please try again.",
+    },
+  },
+
+  footer: {
+    rights: "All rights reserved.",
+    madeBy: "Made by Lolina with ❤️ transform acts into magic.",
+  },
+};
