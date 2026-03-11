@@ -92,15 +92,13 @@ export default function Acerca() {
 
               {/* Stats — siempre visibles */}
               <div className={styles.stats}>
-                {t.about.stats.map((stat, i) => (
-                  <>
-                    {i > 0 && <div key={`div-${i}`} className={styles.statDivider} />}
-                    <div key={stat.label} className={styles.stat}>
-                      <span className={styles.statNum}>{stat.num}</span>
-                      <span className={styles.statLabel}>{stat.label}</span>
-                    </div>
-                  </>
-                ))}
+                {t.about.stats.flatMap((stat, i) => [
+                  i > 0 ? <div key={`div-${i}`} className={styles.statDivider} /> : null,
+                  <div key={stat.label} className={styles.stat}>
+                    <span className={styles.statNum}>{stat.num}</span>
+                    <span className={styles.statLabel}>{stat.label}</span>
+                  </div>,
+                ]).filter(Boolean)}
               </div>
             </div>
           </div>
