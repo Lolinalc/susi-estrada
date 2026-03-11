@@ -1,6 +1,7 @@
 // =============================================
 // DATA: OBRAS / SHOWS
 // Edita este archivo para actualizar el contenido
+// role: "actriz" | "produccion" | ["actriz", "produccion"]
 // =============================================
 
 import imgTren from "../assets/ElTrenMatraca.jpg";
@@ -31,6 +32,7 @@ export const shows = [
     production:
       "Una producción de Alma Arte Escénico y En Su Tinta Producciones.",
     active: true,
+    role: ["actriz", "produccion"],
     tags: ["familiar", "teatro infantil", "música en vivo", "títeres", "danza"],
     social: {
       instagram: "https://www.instagram.com/eltrenmatraca/",
@@ -56,6 +58,7 @@ export const pastShows = [
     dates: "Temporada 2025",
     audience: "+13 años",
     active: false,
+    role: "actriz",
     tags: ["monólogo", "violencia de género", "humor negro", "teatro feminista"],
     social: {
       instagram: "https://www.instagram.com/sabrosa.teatro/",
@@ -76,6 +79,7 @@ export const pastShows = [
     elenco: "Sylvia Pasquel y Alberto Estrella",
     dates: "Finalizó el 3 de agosto de 2025",
     active: false,
+    role: "produccion",
     tags: ["comedia", "teatro", "drama humano"],
     social: {
       instagram: "https://www.instagram.com/laprofesora_obra/?hl=es",
@@ -96,6 +100,7 @@ export const pastShows = [
     elenco: "Susi Estrada, Nattz Landaverde y Alejandra Zapata",
     dates: "Finalizó el 22 de noviembre de 2025",
     active: false,
+    role: "actriz",
     tags: ["sátira", "comedia", "teatro feminista", "colectivo"],
   },
   {
@@ -112,6 +117,7 @@ export const pastShows = [
     elenco: "Susi Estrada",
     dates: "Finalizó el 9 de diciembre de 2023",
     active: false,
+    role: "actriz",
     tags: ["testimonial", "monólogo", "acoso callejero", "teatro feminista"],
   },
 ];

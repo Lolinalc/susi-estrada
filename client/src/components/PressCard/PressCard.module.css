@@ -58,7 +58,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--c-gray-600);
+  color: var(--c-white);
 }
 
 /* === PLAY OVERLAY (solo videos) === */
@@ -103,7 +103,7 @@
 
 .date {
   font-size: 0.75rem;
-  color: var(--c-gray-600);
+  color: var(--c-white);
   margin-left: auto;
 }
 
@@ -118,7 +118,7 @@
 
 .summary {
   font-size: 0.875rem;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   line-height: 1.7;
 }
 

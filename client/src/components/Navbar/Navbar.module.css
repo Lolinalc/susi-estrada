@@ -74,7 +74,7 @@
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
   transition: color var(--dur-base), border-color var(--dur-base);
@@ -103,7 +103,7 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   padding: var(--sp-2) var(--sp-3);
   border: 1px solid var(--c-gray-700);
   border-radius: var(--radius-sm);
@@ -117,7 +117,7 @@
 }
 
 .igLink {
-  color: var(--c-gray-400);
+  color: var(--c-white);
   transition: color var(--dur-base);
   display: flex;
   align-items: center;

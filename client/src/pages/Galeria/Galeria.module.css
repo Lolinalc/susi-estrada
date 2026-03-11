@@ -11,7 +11,7 @@
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   padding: var(--sp-2) var(--sp-5);
   border: 1px solid var(--c-gray-700);
   border-radius: 2px;

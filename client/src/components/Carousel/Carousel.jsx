@@ -132,12 +132,12 @@ export default function Carousel() {
 
       {/* Hero text */}
       <div className={styles.heroText}>
-        <p className={styles.tagline}>{t.home.tagline}</p>
         <h1 className={styles.title}>
           SUSI
           <br />
           ESTRADA
         </h1>
+        <p className={styles.tagline}>{t.home.tagline}</p>
         <div className={styles.titleLine} />
       </div>
 

@@ -57,7 +57,7 @@
 
 .bioParagraph {
   font-size: 1.05rem;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   line-height: 1.85;
   margin-bottom: var(--sp-6);
 }
@@ -73,11 +73,13 @@
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   border: 1px solid var(--c-gray-700);
   padding: var(--sp-3) var(--sp-5);
   border-radius: var(--radius-sm);
-  transition: color var(--dur-base), border-color var(--dur-base),
+  transition:
+    color var(--dur-base),
+    border-color var(--dur-base),
     background var(--dur-base);
 }
 
@@ -102,13 +104,17 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.9s ease, opacity 0.5s ease;
+  transition:
+    max-height 0.9s ease,
+    opacity 0.5s ease;
 }
 
 .bioContentOpen {
   max-height: 4000px;
   opacity: 1;
-  transition: max-height 1s ease, opacity 0.6s ease 0.15s;
+  transition:
+    max-height 1s ease,
+    opacity 0.6s ease 0.15s;
 }
 
 /* === STATS — siempre visibles === */
@@ -140,7 +146,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--c-gray-600);
+  color: var(--c-white);
 }
 
 .statDivider {
@@ -154,7 +160,7 @@
   overflow: hidden;
   margin-top: var(--sp-16);
   padding: var(--sp-6) 0;
-  background: var(--c-green-900);
+  background: var(--c-green-500);
   border-top: 1px solid var(--c-green-800);
   border-bottom: 1px solid var(--c-green-800);
 }
@@ -172,8 +178,12 @@
 }
 
 @keyframes tickerScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .tickerItem {

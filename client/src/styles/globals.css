@@ -123,9 +123,9 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.8rem); }
 h4 { font-size: clamp(1.2rem, 2vw, 1.75rem); }
 
 p {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.8;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   font-weight: 300;
 }
 

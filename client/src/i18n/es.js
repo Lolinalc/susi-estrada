@@ -10,7 +10,7 @@ export const es = {
   },
 
   home: {
-    tagline: "Actriz · Bailarina · Productora",
+    tagline: "Actriz · Productora",
     scrollCta: "Explorar",
   },
 
@@ -25,7 +25,14 @@ export const es = {
       `Actualmente realiza una coproducción escénica internacional con la Embajada de Francia y el IRD – Institut de Recherche pour le Développement, en colaboración con la Dra. Audrey Arnal, proyecto teatral enfocado en la medicina tradicional y los saberes de mujeres mayahablantes, con estreno próximo en Ciudad de México y Mérida, Yucatán, mayo de 2026.`,
       `En los últimos cinco años ha consolidado una línea de trabajo centrada en la producción ejecutiva, la gestión cultural y la creación escénica con perspectiva territorial y de impacto social. Su labor se sostiene a través de apoyos públicos y plataformas de circulación como México: Encuentro de las Artes Escénicas (ENARTES) 2025, reafirmando su compromiso con un teatro riguroso, articulado y profundamente vinculado a su contexto.`,
     ],
+    verMas: "Ver más",
+    verMenos: "Ver menos",
     tickerLabel: "Festivales, teatros y reconocimientos",
+    stats: [
+      { num: "15+", label: "Años de trayectoria" },
+      { num: "30+", label: "Proyectos escénicos" },
+      { num: "3",   label: "Países" },
+    ],
   },
 
   shows: {
@@ -36,6 +43,19 @@ export const es = {
       "Una selección de proyectos en los que Susi ha participado a lo largo de su trayectoria.",
     cta: "Ver detalles",
     placeholder: "Próximamente",
+    activeTag: "En cartelera",
+    filterArea: "Área",
+    filterStatus: "Estado",
+    filterAll: "Todas",
+    filterActriz: "Actriz",
+    filterProduccion: "Producción",
+    filterActive: "En cartelera",
+    filterPast: "Pasadas",
+    countSingular: "obra",
+    countPlural: "obras",
+    empty: "No hay obras que coincidan con los filtros seleccionados.",
+    roleActriz: "Actriz",
+    roleProduccion: "Producción",
   },
 
   calendar: {

@@ -70,6 +70,38 @@
   flex: 1;
 }
 
+/* === ROLE BADGES === */
+.roleBadges {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.roleBadge {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  border: 1px solid;
+}
+
+/* Actriz — acento verde sólido */
+.role_actriz {
+  color: var(--c-black);
+  background: var(--c-green-400);
+  border-color: var(--c-green-400);
+}
+
+/* Producción — outline verde más suave */
+.role_produccion {
+  color: var(--c-green-300);
+  background: transparent;
+  border-color: var(--c-green-700);
+}
+
+/* === TITLE / BODY TEXT === */
 .title {
   font-family: var(--font-display);
   font-size: 1.6rem;
@@ -87,7 +119,7 @@
 
 .synopsis {
   font-size: 0.875rem;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   line-height: 1.7;
   flex: 1;
 }

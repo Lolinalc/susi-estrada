@@ -1,6 +1,6 @@
 .empty {
   font-style: italic;
-  color: var(--c-gray-600);
+  color: var(--c-white);
   padding: var(--sp-12) 0;
 }
 
@@ -85,7 +85,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-gray-600);
+  color: var(--c-white);
 }
 
 /* === EVENT INFO === */
@@ -108,7 +108,7 @@
   align-items: center;
   gap: var(--sp-2);
   font-size: 0.82rem;
-  color: var(--c-gray-400);
+  color: var(--c-white);
 }
 
 .notes {
@@ -130,7 +130,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--c-gray-600);
+  color: var(--c-white);
   padding: var(--sp-1) var(--sp-3);
   border: 1px solid var(--c-gray-700);
   border-radius: 2px;

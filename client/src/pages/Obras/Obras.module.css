@@ -1,3 +1,75 @@
+/* ── Filtros ── */
+.filtersWrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-8);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-12);
+  padding-bottom: var(--sp-8);
+  border-bottom: 1px solid var(--c-gray-800);
+}
+
+.filterGroups {
+  display: flex;
+  gap: var(--sp-8);
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.filterLabel {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-gray-400);
+}
+
+.pills {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--c-gray-700);
+  color: var(--c-white-dim);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.pill:hover {
+  border-color: var(--c-green-500);
+  color: var(--c-white);
+}
+
+.pillActive {
+  background: var(--c-green-800);
+  border-color: var(--c-green-500);
+  color: var(--c-white);
+}
+
+.count {
+  font-size: 0.75rem;
+  color: var(--c-gray-400);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+/* ── Grids ── */
 .activeGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -20,7 +92,7 @@
 
 .pastSub {
   font-size: 0.9rem;
-  color: var(--c-gray-600);
+  color: var(--c-white);
   margin-bottom: var(--sp-10);
   max-width: 60ch;
 }
@@ -31,7 +103,25 @@
   gap: var(--sp-6);
 }
 
+/* ── Sin resultados ── */
+.empty {
+  padding: var(--sp-20) 0;
+  text-align: center;
+  color: var(--c-gray-400);
+}
+
+/* ── Responsive ── */
 @media (max-width: 640px) {
+  .filtersWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filterGroups {
+    flex-direction: column;
+    gap: var(--sp-5);
+  }
+
   .activeGrid,
   .pastGrid {
     grid-template-columns: 1fr;

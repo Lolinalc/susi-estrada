@@ -10,7 +10,7 @@ export const en = {
   },
 
   home: {
-    tagline: "Actress · Dancer · Producer",
+    tagline: "Actress · Producer",
     scrollCta: "Explore",
   },
 
@@ -25,7 +25,14 @@ export const en = {
       `She is currently developing an international scenic co-production with the French Embassy and the IRD – Institut de Recherche pour le Développement, in collaboration with Dr. Audrey Arnal, a theatrical project focused on traditional medicine and the knowledge of Mayan-speaking women, with an upcoming premiere in Mexico City and Mérida, Yucatán, May 2026.`,
       `Over the past five years, she has consolidated a line of work centered on executive production, cultural management and scenic creation with a territorial and social impact perspective. Her work is sustained through public support and circulation platforms such as México: Encuentro de las Artes Escénicas (ENARTES) 2025, reaffirming her commitment to a rigorous, articulated theater deeply connected to its context.`,
     ],
+    verMas: "Read more",
+    verMenos: "Read less",
     tickerLabel: "Festivals, theaters & recognition",
+    stats: [
+      { num: "15+", label: "Years of experience" },
+      { num: "30+", label: "Scenic projects" },
+      { num: "3",   label: "Countries" },
+    ],
   },
 
   shows: {
@@ -36,6 +43,19 @@ export const en = {
       "A selection of projects in which Susi has participated throughout her career.",
     cta: "View details",
     placeholder: "Coming soon",
+    activeTag: "On stage",
+    filterArea: "Area",
+    filterStatus: "Status",
+    filterAll: "All",
+    filterActriz: "Actress",
+    filterProduccion: "Production",
+    filterActive: "On stage",
+    filterPast: "Past",
+    countSingular: "show",
+    countPlural: "shows",
+    empty: "No shows match the selected filters.",
+    roleActriz: "Actress",
+    roleProduccion: "Production",
   },
 
   calendar: {

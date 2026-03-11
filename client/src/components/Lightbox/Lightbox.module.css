@@ -41,7 +41,7 @@
 
 .caption {
   font-size: 0.8rem;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   text-align: center;
   max-width: 60ch;
 }
@@ -49,7 +49,7 @@
 .counter {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: var(--c-gray-600);
+  color: var(--c-white);
 }
 
 /* === CLOSE BUTTON === */
@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c-gray-400);
+  color: var(--c-white);
   border: 1px solid var(--c-gray-700);
   border-radius: 50%;
   transition: all var(--dur-base);

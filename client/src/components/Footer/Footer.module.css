@@ -58,7 +58,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--c-gray-600);
+  color: var(--c-white);
   transition: color var(--dur-base);
 }
 
@@ -73,7 +73,7 @@
 }
 
 .social a {
-  color: var(--c-gray-600);
+  color: var(--c-white);
   transition: color var(--dur-base);
   display: flex;
   align-items: center;
@@ -100,12 +100,12 @@
 .copyright,
 .credit {
   font-size: 0.8rem;
-  color: var(--c-gray-600);
+  color: var(--c-white);
   line-height: 1.4;
 }
 
 .creditLink {
-  color: var(--c-gray-600);
+  color: var(--c-white);
   text-decoration: underline;
   transition: color var(--dur-base);
 }

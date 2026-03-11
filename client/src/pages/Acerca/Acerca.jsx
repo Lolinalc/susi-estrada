@@ -66,7 +66,7 @@ export default function Acerca() {
                 onClick={() => setExpanded((e) => !e)}
                 aria-expanded={expanded}
               >
-                <span>{expanded ? "Ver menos" : "Ver más"}</span>
+                <span>{expanded ? t.about.verMenos : t.about.verMas}</span>
                 <svg
                   className={`${styles.verMasIcon} ${expanded ? styles.verMasIconUp : ""}`}
                   viewBox="0 0 24 24"
@@ -92,20 +92,15 @@ export default function Acerca() {
 
               {/* Stats — siempre visibles */}
               <div className={styles.stats}>
-                <div className={styles.stat}>
-                  <span className={styles.statNum}>10+</span>
-                  <span className={styles.statLabel}>Años de trayectoria</span>
-                </div>
-                <div className={styles.statDivider} />
-                <div className={styles.stat}>
-                  <span className={styles.statNum}>30+</span>
-                  <span className={styles.statLabel}>Proyectos escénicos</span>
-                </div>
-                <div className={styles.statDivider} />
-                <div className={styles.stat}>
-                  <span className={styles.statNum}>3</span>
-                  <span className={styles.statLabel}>Países</span>
-                </div>
+                {t.about.stats.map((stat, i) => (
+                  <>
+                    {i > 0 && <div key={`div-${i}`} className={styles.statDivider} />}
+                    <div key={stat.label} className={styles.stat}>
+                      <span className={styles.statNum}>{stat.num}</span>
+                      <span className={styles.statLabel}>{stat.label}</span>
+                    </div>
+                  </>
+                ))}
               </div>
             </div>
           </div>
