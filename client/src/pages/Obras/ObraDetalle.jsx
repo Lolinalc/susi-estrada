@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { useLanguage } from '../../context/LanguageContext'
 import { shows, pastShows } from '../../data/shows'
+import { getActiveTemporadas, getExpiredTemporadas } from '../../utils/showUtils'
 import styles from './ObraDetalle.module.css'
 
 export default function ObraDetalle() {
@@ -23,6 +24,14 @@ export default function ObraDetalle() {
     )
   }
 
+  // Temporadas activas (endDate >= hoy o sin endDate)
+  const temporadas = getActiveTemporadas(show)
+  // Fechas anteriores = las ya vencidas de temporadas[] + todas las pastTemporadas[]
+  const pastTemporadas = [
+    ...getExpiredTemporadas(show),
+    ...(show.pastTemporadas ?? []),
+  ]
+
   return (
     <>
       <Helmet>
@@ -31,104 +40,176 @@ export default function ObraDetalle() {
       </Helmet>
 
       {/* Hero */}
-      <div className={styles.hero}>
-        <img src={show.heroImage} alt={show.title} className={styles.heroImg} />
-        <div className={styles.heroOverlay} />
+      <div className={`${styles.hero} ${!show.heroImage ? styles.heroPlaceholder : ''}`}>
+        {show.heroImage && (
+          <>
+            <img src={show.heroImage} alt={show.title} className={styles.heroImg} />
+            <div className={styles.heroOverlay} />
+          </>
+        )}
         <div className={styles.heroContent}>
           {show.tagline && <p className={styles.tagline}>{show.tagline}</p>}
           <h1 className={styles.heroTitle}>{show.title}</h1>
+          {!show.heroImage && <div className={styles.heroTitleLine} />}
         </div>
       </div>
 
       <section className={`section ${styles.detail}`}>
         <div className="container">
           <div className={styles.grid}>
-            {/* Synopsis */}
+
+            {/* ── Sinopsis + fechas anteriores ── */}
             <div className={styles.synopsis}>
               <span className="section-eyebrow">Sinopsis</span>
               <div className="section-divider" />
-              <p className={styles.synopsisText}>{show.synopsis}</p>
+              {show.synopsis && (
+                <p className={styles.synopsisText}>{show.synopsis}</p>
+              )}
               {show.synopsisExtra && (
                 <p className={styles.synopsisExtra}>{show.synopsisExtra}</p>
               )}
               {show.production && (
                 <p className={styles.production}>{show.production}</p>
               )}
+
+              {/* Video */}
+              {show.video && (
+                <div className={styles.videoWrapper}>
+                  <video
+                    className={styles.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={show.video.webm} type="video/webm" />
+                    <source src={show.video.mp4}  type="video/mp4" />
+                  </video>
+                </div>
+              )}
+
+              {/* Fechas anteriores */}
+              {pastTemporadas.length > 0 && (
+                <div className={styles.pastTemporadas}>
+                  <span className={styles.pastEyebrow}>Fechas anteriores</span>
+                  <div className={styles.pastList}>
+                    {pastTemporadas.map((pt, i) => (
+                      <div key={i} className={styles.pastItem}>
+                        <span className={styles.pastLabel}>{pt.label}</span>
+                        {pt.venue && (
+                          <span className={styles.pastVenue}>
+                            {pt.venue}
+                            {pt.venueNote && ` · ${pt.venueNote}`}
+                          </span>
+                        )}
+                        <span className={styles.pastDates}>{pt.dates}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Ficha técnica */}
+            {/* ── Ficha técnica ── */}
             <aside className={styles.ficha}>
               <h2 className={styles.fichaTitle}>Ficha de la obra</h2>
-              <ul className={styles.fichaList}>
-                {show.dramaturgia && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Dramaturgia</span>
-                    <span className={styles.fichaValue}>{show.dramaturgia}</span>
-                  </li>
-                )}
-                {show.direccion && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Dirección</span>
-                    <span className={styles.fichaValue}>{show.direccion}</span>
-                  </li>
-                )}
-                {show.elenco && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Elenco</span>
-                    <span className={styles.fichaValue}>{show.elenco}</span>
-                  </li>
-                )}
-                {show.venue && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Lugar</span>
-                    <span className={styles.fichaValue}>
-                      {show.venue}
-                      {show.venueNote && <em className={styles.fichaNote}> {show.venueNote}</em>}
-                    </span>
-                  </li>
-                )}
-                {show.dates && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Temporada</span>
-                    <span className={styles.fichaValue}>{show.dates}</span>
-                  </li>
-                )}
-                {show.schedule && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Funciones</span>
-                    <span className={styles.fichaValue}>{show.schedule}</span>
-                  </li>
-                )}
-                {show.time && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Horario</span>
-                    <span className={styles.fichaValue}>{show.time}</span>
-                  </li>
-                )}
-                {show.audience && (
-                  <li className={styles.fichaItem}>
-                    <span className={styles.fichaLabel}>Público</span>
-                    <span className={styles.fichaValue}>{show.audience}</span>
-                  </li>
-                )}
-              </ul>
 
-              {show.ticketsUrl && (
-                <a
-                  href={show.ticketsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`btn btn-primary ${styles.ticketBtn}`}
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
-                  </svg>
-                  {t.calendar.buy}
-                </a>
+              {/* Datos comunes */}
+              {(show.dramaturgia || show.direccion || show.elenco || show.audience) && (
+                <ul className={styles.fichaList}>
+                  {show.dramaturgia && (
+                    <li className={styles.fichaItem}>
+                      <span className={styles.fichaLabel}>Dramaturgia</span>
+                      <span className={styles.fichaValue}>{show.dramaturgia}</span>
+                    </li>
+                  )}
+                  {show.direccion && (
+                    <li className={styles.fichaItem}>
+                      <span className={styles.fichaLabel}>Dirección</span>
+                      <span className={styles.fichaValue}>{show.direccion}</span>
+                    </li>
+                  )}
+                  {show.elenco && (
+                    <li className={styles.fichaItem}>
+                      <span className={styles.fichaLabel}>Elenco</span>
+                      <span className={styles.fichaValue}>{show.elenco}</span>
+                    </li>
+                  )}
+                  {show.audience && (
+                    <li className={styles.fichaItem}>
+                      <span className={styles.fichaLabel}>Público</span>
+                      <span className={styles.fichaValue}>{show.audience}</span>
+                    </li>
+                  )}
+                </ul>
+              )}
+
+              {/* Bloques de temporadas activas / próximas */}
+              {temporadas.length > 0 && (
+                <div className={styles.temporadasWrapper}>
+                  {temporadas.map((t, i) => (
+                    <div key={i} className={styles.temporadaBlock}>
+                      <p className={styles.temporadaLabel}>{t.label}</p>
+                      <ul className={styles.fichaList}>
+                        {t.venue && (
+                          <li className={styles.fichaItem}>
+                            <span className={styles.fichaLabel}>Lugar</span>
+                            <span className={styles.fichaValue}>
+                              {t.venue}
+                              {t.venueNote && <em className={styles.fichaNote}> {t.venueNote}</em>}
+                            </span>
+                          </li>
+                        )}
+                        {t.dates && (
+                          <li className={styles.fichaItem}>
+                            <span className={styles.fichaLabel}>Temporada</span>
+                            <span className={styles.fichaValue}>{t.dates}</span>
+                          </li>
+                        )}
+                        {t.schedule && (
+                          <li className={styles.fichaItem}>
+                            <span className={styles.fichaLabel}>Funciones</span>
+                            <span className={styles.fichaValue}>{t.schedule}</span>
+                          </li>
+                        )}
+                        {t.time && (
+                          <li className={styles.fichaItem}>
+                            <span className={styles.fichaLabel}>Horario</span>
+                            <span className={styles.fichaValue}>{t.time}</span>
+                          </li>
+                        )}
+                      </ul>
+                      {t.ticketsUrl && (
+                        <a
+                          href={t.ticketsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`btn btn-primary ${styles.ticketBtn}`}
+                        >
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                            <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
+                          </svg>
+                          {t.calendar?.buy ?? t.calendar?.buy ?? 'Comprar boletos'}
+                        </a>
+                      )}
+                      {t.reviewUrl && (
+                        <a
+                          href={t.reviewUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`btn btn-outline ${styles.ticketBtn}`}
+                        >
+                          Leer reseña
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
               )}
 
               {/* Redes sociales */}
-              {show.social && (
+              {show.social && (show.social.instagram || show.social.facebook) && (
                 <div className={styles.socialLinks}>
                   {show.social.instagram && (
                     <a

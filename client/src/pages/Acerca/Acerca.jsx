@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Acerca.module.css";
 import portrait from "../../assets/SABROSA.webp";
+import SusiPerfil1 from "../../assets/SusiPerfil1.webp";
 
 const TICKER_ITEMS = [
   "Festival Internacional Cervantino",
@@ -42,7 +43,7 @@ export default function Acerca() {
             <div className={styles.imageCol}>
               <div className={styles.imageFrame}>
                 <img
-                  src={portrait}
+                  src={SusiPerfil1}
                   alt="Susi Estrada — retrato"
                   className={styles.portrait}
                 />
@@ -92,13 +93,17 @@ export default function Acerca() {
 
               {/* Stats — siempre visibles */}
               <div className={styles.stats}>
-                {t.about.stats.flatMap((stat, i) => [
-                  i > 0 ? <div key={`div-${i}`} className={styles.statDivider} /> : null,
-                  <div key={stat.label} className={styles.stat}>
-                    <span className={styles.statNum}>{stat.num}</span>
-                    <span className={styles.statLabel}>{stat.label}</span>
-                  </div>,
-                ]).filter(Boolean)}
+                {t.about.stats
+                  .flatMap((stat, i) => [
+                    i > 0 ? (
+                      <div key={`div-${i}`} className={styles.statDivider} />
+                    ) : null,
+                    <div key={stat.label} className={styles.stat}>
+                      <span className={styles.statNum}>{stat.num}</span>
+                      <span className={styles.statLabel}>{stat.label}</span>
+                    </div>,
+                  ])
+                  .filter(Boolean)}
               </div>
             </div>
           </div>

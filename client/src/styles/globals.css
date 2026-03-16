@@ -127,6 +127,8 @@ p {
   line-height: 1.8;
   color: var(--c-white);
   font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* ========== LAYOUT HELPERS ========== */

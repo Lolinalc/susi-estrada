@@ -5,10 +5,7 @@ import ShowCard from '../../components/ShowCard/ShowCard'
 import { shows, pastShows } from '../../data/shows'
 import styles from './Obras.module.css'
 
-const ALL_SHOWS = [
-  ...shows.map((s) => ({ ...s, active: true })),
-  ...pastShows.map((s) => ({ ...s, active: false })),
-]
+const ALL_SHOWS = [...shows, ...pastShows]
 
 function hasRole(show, area) {
   if (area === 'todas') return true

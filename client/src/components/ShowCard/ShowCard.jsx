@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import { isShowActive } from "../../utils/showUtils";
 import styles from "./ShowCard.module.css";
 
 function RoleBadges({ role, roleLabels }) {
@@ -16,6 +17,7 @@ function RoleBadges({ role, roleLabels }) {
   );
 }
 
+
 export default function ShowCard({ show }) {
   const { t } = useLanguage();
 
@@ -24,21 +26,26 @@ export default function ShowCard({ show }) {
     produccion: t.shows.roleProduccion,
   };
 
-  if (!show.active) {
+  // El badge "En cartelera" se muestra solo si tiene fechas futuras reales
+  const active = isShowActive(show);
+
+  if (!active) {
     // Past show — card con link a detalles
     return (
       <article className={`${styles.card} ${styles.past}`}>
         <Link
           to={`/obras/${show.slug}`}
-          className={styles.imgWrapper}
+          className={`${styles.imgWrapper} ${!show.image ? styles.imgPlaceholder : ''}`}
           aria-label={`Ver detalles de ${show.title}`}
         >
-          <img
-            src={show.image}
-            alt={show.title}
-            className={styles.img}
-            loading="lazy"
-          />
+          {show.image ? (
+            <img src={show.image} alt={show.title} className={styles.img} loading="lazy" />
+          ) : (
+            <>
+              <p className={styles.placeholderTitle}>{show.title}</p>
+              <div className={styles.placeholderLine} />
+            </>
+          )}
           <div className={styles.imgOverlay} />
         </Link>
         <div className={styles.body}>
@@ -60,17 +67,22 @@ export default function ShowCard({ show }) {
     <article className={styles.card}>
       <Link
         to={`/obras/${show.slug}`}
-        className={styles.imgWrapper}
+        className={`${styles.imgWrapper} ${!show.image ? styles.imgPlaceholder : ''}`}
         aria-label={`Ver detalles de ${show.title}`}
       >
-        <img
-          src={show.image}
-          alt={show.title}
-          className={styles.img}
-          loading="lazy"
-        />
-        <div className={styles.imgOverlay} />
-        <span className={styles.activeTag}>{t.shows.activeTag}</span>
+        {show.image ? (
+          <>
+            <img src={show.image} alt={show.title} className={styles.img} loading="lazy" />
+            <div className={styles.imgOverlay} />
+            {active && <span className={styles.activeTag}>{t.shows.activeTag}</span>}
+          </>
+        ) : (
+          <>
+            <p className={styles.placeholderTitle}>{show.title}</p>
+            <div className={styles.placeholderLine} />
+            {active && <span className={styles.activeTag}>{t.shows.activeTag}</span>}
+          </>
+        )}
       </Link>
       <div className={styles.body}>
         <RoleBadges role={show.role} roleLabels={roleLabels} />

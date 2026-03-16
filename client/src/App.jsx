@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { LanguageProvider } from './context/LanguageContext'
 import Layout from './components/Layout/Layout'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 import Home       from './pages/Home/Home'
 import Acerca     from './pages/Acerca/Acerca'
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
+        <ScrollToTop />
         <Routes>
           <Route element={<Layout />}>
             <Route path="/"           element={<Home />} />

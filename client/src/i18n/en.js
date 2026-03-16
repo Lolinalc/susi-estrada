@@ -80,17 +80,8 @@ export const en = {
   contact: {
     eyebrow: "Get in touch",
     title: "Contact",
-    social: "Social Media",
-    form: {
-      name: "Name",
-      email: "Email address",
-      subject: "Subject",
-      message: "Message",
-      send: "Send message",
-      sending: "Sending…",
-      success: "Message sent! I'll be in touch soon.",
-      error: "An error occurred. Please try again.",
-    },
+    message:
+      "For collaborations, press inquiries, questions about upcoming shows, or any other matter related to my work, feel free to reach out via Instagram. I will be happy to get back to you as soon as possible.",
   },
 
   footer: {

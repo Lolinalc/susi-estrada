@@ -4,14 +4,47 @@
   padding: var(--sp-12) 0;
 }
 
-/* === MONTHS === */
+/* ── Toggle de vista ─────────────────────────────────────────────────────── */
+.viewToggle {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-10);
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-5);
+  background: transparent;
+  border: 1px solid var(--c-gray-700);
+  color: var(--c-white);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--dur-base);
+}
+
+.toggleBtn:hover {
+  border-color: var(--c-green-400);
+  color: var(--c-green-400);
+}
+
+.toggleActive {
+  background: var(--c-green-900);
+  border-color: var(--c-green-400);
+  color: var(--c-green-400);
+}
+
+/* ══════════════════════════════════════════════════════
+   VISTA LISTA
+══════════════════════════════════════════════════════ */
 .months {
   display: flex;
   flex-direction: column;
   gap: var(--sp-16);
 }
-
-.monthGroup {}
 
 .monthLabel {
   font-family: var(--font-display);
@@ -25,7 +58,6 @@
   border-bottom: 1px solid var(--c-gray-800);
 }
 
-/* === EVENT ROW === */
 .eventList {
   display: flex;
   flex-direction: column;
@@ -41,11 +73,10 @@
   background: var(--c-gray-800);
   border: 1px solid var(--c-gray-700);
   border-left: 3px solid var(--c-green-700);
-  transition: transform var(--dur-base), border-color var(--dur-base), background var(--dur-base);
+  transition: transform var(--dur-base), background var(--dur-base);
 }
 
 .event:hover {
-  border-left-color: var(--c-green-400);
   background: var(--c-gray-700);
   transform: translateX(4px);
 }
@@ -60,7 +91,6 @@
   background: var(--c-gray-800);
 }
 
-/* === DATE BLOCK === */
 .dateBlock {
   display: flex;
   flex-direction: column;
@@ -88,7 +118,6 @@
   color: var(--c-white);
 }
 
-/* === EVENT INFO === */
 .showName {
   font-family: var(--font-display);
   font-size: 1.3rem;
@@ -118,7 +147,6 @@
   margin-top: var(--sp-2);
 }
 
-/* === CTA === */
 .ticketBtn {
   flex-shrink: 0;
   white-space: nowrap;
@@ -137,8 +165,305 @@
   flex-shrink: 0;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 700px) {
+/* ══════════════════════════════════════════════════════
+   VISTA CUADRÍCULA
+══════════════════════════════════════════════════════ */
+.gridView {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* Navegación mes */
+.gridNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+
+.gridMonthTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  color: var(--c-green-400);
+  text-transform: capitalize;
+  letter-spacing: -0.02em;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--c-gray-700);
+  color: var(--c-white);
+  cursor: pointer;
+  transition: border-color var(--dur-base), color var(--dur-base);
+}
+
+.navBtn:hover {
+  border-color: var(--c-green-400);
+  color: var(--c-green-400);
+}
+
+/* Encabezado días de semana */
+.gridHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--c-gray-700);
+}
+
+.gridDow {
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-green-400);
+  padding: var(--sp-3) 0;
+}
+
+/* ── Cuadrícula de celdas ─────────────────────────────────────────────────── */
+.gridCells {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-left: 1px solid var(--c-gray-800);
+  border-top: 1px solid var(--c-gray-800);
+}
+
+.gridCellEmpty {
+  min-height: 110px;
+  background: transparent;
+  border-right: 1px solid var(--c-gray-800);
+  border-bottom: 1px solid var(--c-gray-800);
+}
+
+.gridCell {
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--sp-3);
+  background: var(--c-gray-800);
+  border-right: 1px solid var(--c-gray-700);
+  border-bottom: 1px solid var(--c-gray-700);
+  transition: background var(--dur-base);
+  cursor: default;
+  overflow: hidden;
+}
+
+.gridCellActive {
+  cursor: pointer;
+}
+
+.gridCellActive:hover {
+  background: var(--c-gray-700);
+}
+
+.gridCellToday {
+  background: var(--c-green-900) !important;
+  border-color: var(--c-green-700) !important;
+}
+
+.gridCellSelected {
+  background: #1a2e1a !important;
+  border-color: var(--c-green-500) !important;
+  outline: 1px solid var(--c-green-500);
+  outline-offset: -1px;
+}
+
+.gridCellPast {
+  opacity: 0.35;
+}
+
+/* Número de día */
+.gridDayNum {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--c-white);
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+  min-width: 22px;
+  text-align: center;
+}
+
+.gridDayToday {
+  background: var(--c-green-500);
+  color: #000;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ── Chips de eventos (desktop) ──────────────────────────────────────────── */
+.gridEventChips {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.gridChip {
+  display: flex;
+  flex-direction: column;
+  padding: 3px 6px;
+  border-radius: 2px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.chipTime {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.chipName {
+  font-size: 0.72rem;
+  color: var(--c-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+/* ── Puntos (solo móvil) ─────────────────────────────────────────────────── */
+.gridDotsMobile {
+  display: none;
+}
+
+.gridDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Panel detalle del día ───────────────────────────────────────────────── */
+.dayDetail {
+  margin-top: var(--sp-4);
+  background: var(--c-gray-800);
+  border: 1px solid var(--c-gray-700);
+  border-top: 2px solid var(--c-green-600);
+  padding: var(--sp-6) var(--sp-8);
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dayDetailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--c-gray-700);
+}
+
+.dayDetailTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--c-green-300);
+  text-transform: capitalize;
+}
+
+.dayDetailClose {
+  background: none;
+  border: none;
+  color: var(--c-white);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: var(--sp-1) var(--sp-2);
+  opacity: 0.6;
+  transition: opacity var(--dur-base);
+}
+
+.dayDetailClose:hover { opacity: 1; }
+
+.dayDetailEvent {
+  border-left: 3px solid var(--c-green-600);
+  padding: var(--sp-3) var(--sp-5);
+  margin-bottom: var(--sp-3);
+  background: var(--c-gray-700);
+}
+
+.dayDetailShow {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--c-white);
+  margin-bottom: var(--sp-1);
+}
+
+.dayDetailVenue {
+  font-size: 0.82rem;
+  color: var(--c-white);
+  margin-bottom: var(--sp-2);
+}
+
+/* ── Leyenda ─────────────────────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--c-gray-800);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.78rem;
+  color: var(--c-white);
+  letter-spacing: 0.04em;
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .gridCell {
+    min-height: 80px;
+    padding: var(--sp-2);
+  }
+
+  .gridChip {
+    padding: 2px 4px;
+  }
+
+  .chipTime {
+    font-size: 0.6rem;
+  }
+
+  .chipName {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Lista */
   .event {
     grid-template-columns: 56px 1fr;
     grid-template-rows: auto auto;
@@ -156,5 +481,37 @@
   .eventMeta {
     flex-direction: column;
     gap: var(--sp-2);
+  }
+
+  /* Cuadrícula: cambiar a puntos en móvil */
+  .gridCell {
+    min-height: 52px;
+    padding: var(--sp-2) var(--sp-1);
+    align-items: center;
+  }
+
+  .gridDayNum {
+    font-size: 0.78rem;
+    margin-bottom: var(--sp-1);
+  }
+
+  /* Ocultar chips, mostrar puntos */
+  .gridEventChips {
+    display: none;
+  }
+
+  .gridDotsMobile {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dayDetail {
+    padding: var(--sp-4) var(--sp-5);
+  }
+
+  .legend {
+    gap: var(--sp-3);
   }
 }
