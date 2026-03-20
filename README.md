@@ -2,7 +2,7 @@
 
 Sitio web oficial de **Susi Estrada**, actriz, bailarina y productora cultural independiente.
 
-Construido con **React + Vite** (frontend) y **Node.js + Express** (backend).
+Construido con **React + Vite**, desplegado como SPA estática en Vercel.
 
 ---
 
@@ -15,15 +15,11 @@ Construido con **React + Vite** (frontend) y **Node.js + Express** (backend).
 | SEO                | react-helmet-async                          |
 | Estilos            | CSS Modules + Variables CSS                 |
 | Fuentes            | Cormorant Garamond + DM Sans (Google Fonts) |
-| Backend            | Node.js + Express 4                         |
-| Correo             | Nodemailer                                  |
-| Validación         | express-validator                           |
-| Seguridad          | Helmet, CORS, express-rate-limit            |
-| Dev workflow       | concurrently                                |
+| Deploy             | Vercel                                      |
 
 ---
 
 ## 📜 Licencia
 
-© 2026 Susi Estrada. Todos los derechos reservados.  
-Desarrollo: [Lolina](https://lolina.dev)
+© 2026 Susi Estrada. Todos los derechos reservados.
+Desarrollo: [Lolina](https://aboutme-livid.vercel.app/)

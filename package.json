@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\" --names \"client,server\" --prefix-colors \"cyan,green\"",
-    "dev:client": "cd client && npm run dev",
-    "dev:server": "cd server && npm run dev",
-    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
-    "build:client": "cd client && npm run build"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "preview": "cd client && npm run preview",
+    "install:all": "cd client && npm install"
   }
 }
