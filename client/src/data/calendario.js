@@ -159,24 +159,33 @@ export const events = [
     notes: "Última función de temporada",
   },
 
-  // ── S.A.B.R.O.S.A. · Festival de Sor Juana 2026 (Chicago) ────────────────
+  // ── S.A.B.R.O.S.A. · Festival de Monólogos de Chicago ────────────────────
   {
-    id: "sabrosa-chicago-abr-24",
+    id: "sabrosa-chicago-abr-02",
     show: "S.A.B.R.O.S.A.",
-    date: "2026-04-24",
-    venue: "Teatro Aguijón — Festival de Sor Juana 2026",
+    date: "2026-04-02",
+    venue: "National Museum of Mexican Art",
     city: "Chicago, Illinois",
-    ticketsUrl: null,
-    notes: "Boletos próximamente",
+    ticketsUrl: "https://nationalmuseumofmexicanart.org/events/s-a-b-r-o-s-a",
+    notes: "",
+  },
+  {
+    id: "sabrosa-chicago-abr-04",
+    show: "S.A.B.R.O.S.A.",
+    date: "2026-04-04",
+    venue: "National Museum of Mexican Art",
+    city: "Chicago, Illinois",
+    ticketsUrl: "https://nationalmuseumofmexicanart.org/events/s-a-b-r-o-s-a",
+    notes: "",
   },
   {
     id: "sabrosa-chicago-abr-25",
     show: "S.A.B.R.O.S.A.",
     date: "2026-04-25",
-    venue: "Teatro Aguijón — Festival de Sor Juana 2026",
+    venue: "National Museum of Mexican Art",
     city: "Chicago, Illinois",
-    ticketsUrl: null,
-    notes: "Boletos próximamente",
+    ticketsUrl: "https://nationalmuseumofmexicanart.org/events/s-a-b-r-o-s-a",
+    notes: "",
   },
 
   // ── MUJER TIERRA (mayo 2026) ──────────────────────────────────────────────

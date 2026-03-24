@@ -87,12 +87,12 @@ export const shows = [
     },
     temporadas: [
       {
-        label: "Festival de Sor Juana 2026 · Chicago",
-        venue: "Teatro Aguijón — Festival de Sor Juana 2026",
+        label: "Festival de Monólogos de Chicago · National Museum of Mexican Art",
+        venue: "National Museum of Mexican Art",
         venueNote: "Chicago, Illinois",
-        dates: "24 y 25 de Abril de 2026",
-        schedule: "24 y 25 de abril",
-        ticketsUrl: null,
+        dates: "2, 4 y 25 de Abril de 2026",
+        schedule: "2, 4 y 25 de abril",
+        ticketsUrl: "https://nationalmuseumofmexicanart.org/events/s-a-b-r-o-s-a",
         endDate: "2026-04-25",
       },
       {
