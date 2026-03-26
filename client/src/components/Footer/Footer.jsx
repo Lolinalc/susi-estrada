@@ -21,7 +21,7 @@ export default function Footer({ isHome = false }) {
           <p className={styles.credit}>
             Hecho por{" "}
             <a
-              href="https://lolina-solutions.netlify.app/"
+              href="https://lolinadigital.com/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.creditLink}
