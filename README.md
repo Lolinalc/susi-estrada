@@ -22,4 +22,4 @@ Construido con **React + Vite**, desplegado como SPA estática en Vercel.
 ## 📜 Licencia
 
 © 2026 Susi Estrada. Todos los derechos reservados.
-Desarrollo: [Lolina](https://aboutme-livid.vercel.app/)
+Desarrollo: [Lolina](https://lolinadigital.com/)
