@@ -16,6 +16,9 @@ import imgEstaBoca from "../assets/EstaBocaEsMiaPortada.jpg";
 import imgWomanWashing2 from "../assets/womanw_foroshkpr031_54714903133_o.webp";
 import videoSabrosaWebm from "../assets/videoSabrosa.webm";
 import videoSabrosaMP4 from "../assets/videoSabrosa_opt.mp4";
+import imgMujerTierraFront from "../assets/Mujer tierra-front .webp";
+import imgMujerTierraSusi from "../assets/Mujer tierra-Susi.webp";
+import imgMujerTierra2 from "../assets/Mujer tierra-2.webp";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SHOWS ACTIVOS / PRÓXIMOS
@@ -120,23 +123,42 @@ export const shows = [
     id: "mujer-tierra",
     slug: "mujer-tierra",
     title: "Mujer Tierra",
-    tagline: "Descripción y ficha técnica próximamente",
-    synopsis: "",
-    image: null,
-    heroImage: null,
+    tagline: "Un canto a la identidad, a la lucha y a la fuerza de las mujeres",
+    synopsis: `En el corazón de una comunidad maya, Naab hereda el don de sanar y la responsabilidad de resguardar la medicina tradicional. Mientras honra la tierra a través de rituales sagrados, su hermana Zazil se debate entre el conocimiento científico y las raíces que la llaman.
+
+La llegada del "progreso" amenaza con borrar no solo el territorio, sino la memoria y la vida que lo habita. Entre tensiones familiares, visiones oníricas y la voz de los ancestros, ambas hermanas enfrentan una decisión que transformará su destino.
+
+Esta obra es un canto a la identidad, a la lucha por lo que nos pertenece y a la fuerza de las mujeres que sostienen la vida.`,
+    image: imgMujerTierraFront,
+    heroImage: imgMujerTierraSusi,
+    gallery: [imgMujerTierraFront, imgMujerTierraSusi, imgMujerTierra2],
     active: true,
     role: ["actriz", "produccion"],
-    tags: ["teatro", "producción"],
+    tags: ["teatro", "identidad", "comunidad maya", "teatro feminista", "producción"],
+    dramaturgia: "Giovana Urquieta",
+    direccion: "Ana Karen Peraza y Susi Estrada (co-dirección)",
     social: {},
+    programaUrl: "https://drive.google.com/file/d/1Fz7WKvRqRFaUAjQSx637e-jE6HS1fdYC/view?usp=sharing",
     temporadas: [
       {
         label: "Temporada 2026 · Ciudad de México",
-        venue: "Foro Urgente 2, Foro Shakespeare",
+        venue: "Foro Shakespeare",
         venueNote: "Ciudad de México",
-        dates: "18 y 20 de Mayo de 2026",
+        dates: "18 y 20 de mayo de 2026",
         schedule: "18 y 20 de mayo",
-        ticketsUrl: null,
+        time: "8:30 pm",
+        ticketsUrl: "https://boletos.shakespeareycia.com/eventperformances.asp?evt=676",
         endDate: "2026-05-20",
+      },
+      {
+        label: "Temporada 2026 · Mérida",
+        venue: "Ensayódromo del Centro Cultural Ibérica, García Ginerés",
+        venueNote: "Mérida, Yucatán",
+        dates: "30 de mayo de 2026",
+        schedule: "Sábado 30 de mayo",
+        time: "7:00 pm",
+        ticketsUrl: null,
+        endDate: "2026-05-30",
       },
     ],
     pastTemporadas: [],

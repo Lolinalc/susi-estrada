@@ -8,6 +8,7 @@ import womanWashing from "../../assets/WomanWashing2.jpg";
 import enEscena from "../../assets/SusiEnEscena.jpg";
 import retradoBN from "../../assets/SusiRetratoBN.jpg";
 import retratoColor from "../../assets/SusiRetratoColor.jpg";
+import mujerTierra from "../../assets/Mujer tierra-Susi.webp";
 
 const SLIDES = [
   {
@@ -15,6 +16,12 @@ const SLIDES = [
     image: sabrosa1,
     alt: "Susi Estrada — S.A.B.R.O.S.A.",
     position: "50% 20%", // opciones: top | center | bottom | "50% 20%"
+  },
+  {
+    id: 8,
+    image: mujerTierra,
+    alt: "Susi Estrada — Mujer Tierra",
+    position: "center", // opciones: top | center | bottom | "50% 20%"
   },
   {
     id: 2,

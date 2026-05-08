@@ -67,6 +67,11 @@ import boca5    from '../assets/EstaBocaEsMia5.webp'
 import boca6    from '../assets/EstaBocaEsMia6.webp'
 import bocaFlyer from '../assets/EstaBocaEsMiaFlyer.jpg'
 
+// MUJER TIERRA
+import mujerTierraFront from '../assets/Mujer tierra-front .webp'
+import mujerTierraSusi  from '../assets/Mujer tierra-Susi.webp'
+import mujerTierra2     from '../assets/Mujer tierra-2.webp'
+
 // OTROS / RETRATOS
 import susiEscena      from '../assets/SusiEnEscena.jpg'
 import susiRetratoBN   from '../assets/SusiRetratoBN.jpg'
@@ -84,6 +89,7 @@ export const galleryCategories = [
   { id: 'sabrosa',       label: 'S.A.B.R.O.S.A.',   labelEn: 'S.A.B.R.O.S.A.' },
   { id: 'woman-washing', label: 'Woman Washing',      labelEn: 'Woman Washing' },
   { id: 'esta-boca',     label: 'Esta Boca es Mía',  labelEn: 'Esta Boca es Mía' },
+  { id: 'mujer-tierra',  label: 'Mujer Tierra',      labelEn: 'Mujer Tierra' },
   { id: 'otros',         label: 'Otros',              labelEn: 'Other' },
 ]
 
@@ -152,6 +158,11 @@ export const galleryImages = [
   { id: 'g75', category: 'esta-boca', src: boca5,    alt: 'Esta Boca es Mía — escena 5', thumb: boca5 },
   { id: 'g76', category: 'esta-boca', src: boca6,    alt: 'Esta Boca es Mía — escena 6', thumb: boca6 },
   { id: 'g77', category: 'esta-boca', src: bocaFlyer, alt: 'Esta Boca es Mía — flyer',   thumb: bocaFlyer },
+
+  // MUJER TIERRA
+  { id: 'g90', category: 'mujer-tierra', src: mujerTierraFront, alt: 'Mujer Tierra — portada',  thumb: mujerTierraFront },
+  { id: 'g91', category: 'mujer-tierra', src: mujerTierraSusi,  alt: 'Mujer Tierra — Susi',     thumb: mujerTierraSusi },
+  { id: 'g92', category: 'mujer-tierra', src: mujerTierra2,     alt: 'Mujer Tierra — escena',   thumb: mujerTierra2 },
 
   // OTROS
   { id: 'g80', category: 'otros', src: susiEscena,       alt: 'Susi Estrada en escena',    thumb: susiEscena },
